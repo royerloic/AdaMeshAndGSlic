@@ -89,7 +89,7 @@ public class SLICToMeshTests
 																						0.5,
 																						1,
 																						1,
-																						lLaplacianDoubleImage.getGreyByteBuffer(-0.125,
+																						lLaplacianDoubleImage.getRGBByteBuffer(-0.125,
 																																										0.125),
 																						lLaplacianDoubleImage.getWidth(),
 																						lLaplacianDoubleImage.getHeight(),

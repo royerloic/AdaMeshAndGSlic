@@ -42,7 +42,7 @@ public class ImageAdaptiveMeshTests
 
 		// lDoubleImage.sympower(2);
 
-		final GraphicsProvider lLWJGLGraphics = LWJGLGraphics.fakefullscreen();
+		final GraphicsProvider lLWJGLGraphics = LWJGLGraphics.fullscreen();
 		final HumanInterfaceTranslatorInterface lHumanInterfaceTranslator = new HumanInterfaceTranslatorTouchPad(lLWJGLGraphics);
 
 		final HyperPlaneRenderer lHyperPlaneRenderer = new HyperPlaneRenderer(lLWJGLGraphics,
@@ -52,7 +52,7 @@ public class ImageAdaptiveMeshTests
 
 		final byte[] lArray = new byte[lDoubleImage.getLength() * 4];
 
-		lDoubleImage.getGreyByteBuffer(0, 1)
+		lDoubleImage.getRGBByteBuffer(0, 1)
 								.get(lArray, 0, lArray.length);
 
 		// Node lChild = lRootNode.addChild(0, 0, 1, 1);
@@ -65,12 +65,13 @@ public class ImageAdaptiveMeshTests
 																		0.5,
 																		1,
 																		1,
-																		lDoubleImage.getGreyByteBuffer(	0,
+																		lDoubleImage.getRGBByteBuffer(	0,
 																																		1),
 																		lDoubleImage.getWidth(),
 																		lDoubleImage.getHeight(),
 																		true);
 		lImage.linear = false;
+		lImage.hflip = true;
 		lImagesBasic.add(lImage);
 
 		final TriangleMeshVertexArrays lTriangleMeshVertexArrays = new TriangleMeshVertexArrays();

@@ -104,7 +104,7 @@ public class SLICTests
 																						0.5,
 																						1,
 																						1,
-																						lLaplacianDoubleImage.getGreyByteBuffer(-1,
+																						lLaplacianDoubleImage.getRGBByteBuffer(-1,
 																																										1),
 																						lLaplacianDoubleImage.getWidth(),
 																						lLaplacianDoubleImage.getHeight(),

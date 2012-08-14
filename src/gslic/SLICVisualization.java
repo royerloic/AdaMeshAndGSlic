@@ -52,7 +52,7 @@ public class SLICVisualization
 												0.5,
 												1,
 												1,
-												mDoubleImage.getGreyByteBuffer(0, 1),
+												mDoubleImage.getRGBByteBuffer(0, 1),
 												mDoubleImage.getWidth(),
 												mDoubleImage.getHeight(),
 												true);
