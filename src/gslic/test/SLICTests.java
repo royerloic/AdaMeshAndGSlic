@@ -36,7 +36,7 @@ public class SLICTests
 												InstantiationException,
 												IllegalAccessException
 	{
-		final int lResolution =256;
+		final int lResolution = 256;
 		final InputStream lInputStream = SLICTests.class.getResourceAsStream("/image/tail1.1024.png");
 		final DoubleArrayImage lDoubleImage = new DoubleArrayImage(lInputStream);
 
@@ -55,7 +55,9 @@ public class SLICTests
 		Node lNode3 = lRootNode.addChild(0, 0.5, 0.4, 0.4);
 		Node lNode4 = lRootNode.addChild(0.5, 0.5, 0.4, 0.4);
 
-		SLICAbstract lSLICorg = new StandardSLIC(lDoubleImage, lResolution, 0.01);
+		SLICAbstract lSLICorg = new StandardSLIC(	lDoubleImage,
+																							lResolution,
+																							0.01);
 		SLICVisualization lSLICorgVisualization = new SLICVisualization(lSLICorg);
 		lSLICorgVisualization.attachToNode(lNode1);
 
@@ -67,7 +69,9 @@ public class SLICTests
 		lSLICorgVisualization.updateBoudaries(Color.red);
 		lSLICorgVisualization.updateCentroids();
 
-		SLICAbstract lSLICnew = new GeodesicSLIC(lDoubleImage, lResolution, 0.001);
+		SLICAbstract lSLICnew = new GeodesicSLIC(	lDoubleImage,
+																							lResolution,
+																							0.001);
 		SLICVisualization lSLICnewVisualization = new SLICVisualization(lSLICnew);
 		// lSLICnewVisualization.setDisplayImage(false);
 		lSLICnewVisualization.attachToNode(lNode2);
@@ -80,11 +84,11 @@ public class SLICTests
 		lSLICnewVisualization.updateBoudaries(Color.red);
 		lSLICnewVisualization.updateCentroids();
 
-		LaplacianGeodesicSLIC lSLIClapl = new LaplacianGeodesicSLIC(	lDoubleImage,
-		                                                            	lResolution,
-																												0.1,
-																												5,
-																												1);
+		LaplacianGeodesicSLIC lSLIClapl = new LaplacianGeodesicSLIC(lDoubleImage,
+																																lResolution,
+																																0.1,
+																																5,
+																																1);
 		SLICVisualization lSLIClaplVisualization = new SLICVisualization(lSLIClapl);
 		// lSLICnewVisualization.setDisplayImage(false);
 		lSLIClaplVisualization.attachToNode(lNode3);
@@ -104,12 +108,13 @@ public class SLICTests
 																						0.5,
 																						1,
 																						1,
-																						lLaplacianDoubleImage.getRGBByteBuffer(-1,
-																																										1),
+																						lLaplacianDoubleImage.getMonochromeByteBuffer(-1,
+																																													1),
 																						lLaplacianDoubleImage.getWidth(),
 																						lLaplacianDoubleImage.getHeight(),
+																						true,
 																						true);
-		//lImageRenderModule.add(lLaplacianImage);
+		// lImageRenderModule.add(lLaplacianImage);
 
 		lHyperPlaneRenderer.start();
 		lHyperPlaneRenderer.waitForRunning();

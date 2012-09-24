@@ -52,9 +52,10 @@ public class SLICVisualization
 												0.5,
 												1,
 												1,
-												mDoubleImage.getRGBByteBuffer(0, 1),
+												mDoubleImage.getMonochromeByteBuffer(0, 1),
 												mDoubleImage.getWidth(),
 												mDoubleImage.getHeight(),
+												true,
 												true);
 		mImage.linear = false;
 
@@ -127,7 +128,7 @@ public class SLICVisualization
 
 			}
 
-		mLineMeshRenderModule.update();
+		mLineMesh.requestUpdate();
 
 	}
 

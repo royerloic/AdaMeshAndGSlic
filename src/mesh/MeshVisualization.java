@@ -59,8 +59,7 @@ public class MeshVisualization
 			mLineMesh.addLine(vi, wi);
 			mLineMesh.addLine(wi, ui);
 		}
-
-		mLineMeshRenderModule.update();
+		mLineMesh.requestUpdate();
 	}
 
 }

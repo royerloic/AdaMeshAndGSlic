@@ -42,18 +42,17 @@ public class ImageAdaptiveMeshTests
 
 		// lDoubleImage.sympower(2);
 
-		final GraphicsProvider lLWJGLGraphics = LWJGLGraphics.fullscreen();
+		final GraphicsProvider lLWJGLGraphics = LWJGLGraphics.fakefullscreen();
 		final HumanInterfaceTranslatorInterface lHumanInterfaceTranslator = new HumanInterfaceTranslatorTouchPad(lLWJGLGraphics);
 
 		final HyperPlaneRenderer lHyperPlaneRenderer = new HyperPlaneRenderer(lLWJGLGraphics,
-																																									lHumanInterfaceTranslator);
+																																					lHumanInterfaceTranslator);
 
 		final Node lRootNode = lHyperPlaneRenderer.getRootNode();
 
 		final byte[] lArray = new byte[lDoubleImage.getLength() * 4];
 
-		lDoubleImage.getRGBByteBuffer(0, 1)
-								.get(lArray, 0, lArray.length);
+		lDoubleImage.getRGBByteBuffer(0, 1).get(lArray, 0, lArray.length);
 
 		// Node lChild = lRootNode.addChild(0, 0, 1, 1);
 		final Node lChild = lRootNode;
@@ -65,11 +64,9 @@ public class ImageAdaptiveMeshTests
 																		0.5,
 																		1,
 																		1,
-																		lDoubleImage.getRGBByteBuffer(	0,
-																																		1),
-																		lDoubleImage.getWidth(),
-																		lDoubleImage.getHeight(),
-																		true);
+																		lDoubleImage,
+																		0,
+																		1);
 		lImage.linear = false;
 		lImage.hflip = true;
 		lImagesBasic.add(lImage);
@@ -157,7 +154,7 @@ public class ImageAdaptiveMeshTests
 															final Mesh lMesh)
 	{
 		copyMeshToDisplay(lMesh, lLineMesh);
-		lTriangleMeshVertexArrays.update();
+		lLineMesh.requestUpdate();
 	}
 
 	private void updateFeaturePoints(	LineMesh pFeatureLines,
