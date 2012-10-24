@@ -117,11 +117,11 @@ public class ImageAdaptiveMeshTests
 			for (int r = 0; r < 5; r++)
 			{
 				lIAMAlgorythm.relaxall(1);
-				lIAMAlgorythm.snap(32, 1, 0.1);
+				lIAMAlgorythm.snap(16, 1, 0.1);
 				lIAMAlgorythm.delauney(1);
 			}
 
-			lIAMAlgorythm.snap(32, 1, 0.00000001);
+			lIAMAlgorythm.snap(16, 1, 0.00000001);
 			lIAMAlgorythm.decompose(32, 0.00000001, 4);
 
 			lIAMAlgorythm.snap(128, 1, 0.001);

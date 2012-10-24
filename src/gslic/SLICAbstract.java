@@ -386,6 +386,7 @@ public abstract class SLICAbstract
 			return 0;
 
 		final int lOffset = pX + mWidth * pY;
+		//System.out.println(lOffset);
 
 		if (pPixelState[lOffset] == 0 && pLabelField[lOffset] == pLabel)
 		{

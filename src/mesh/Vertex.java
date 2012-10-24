@@ -81,12 +81,12 @@ public class Vertex
 		return "Vertex [x=" + x + ", y=" + y + ", i=" + i + "]";
 	}
 
-	public static boolean areNeighbours(Vertex pU, Vertex pV)
+	public static final boolean areNeighbours(final Vertex pU, final Vertex pV)
 	{
 		return pU.isNeighbour(pV) && pV.isNeighbour(pU);
 	}
 
-	public static double angle(Vertex o, Vertex u, Vertex v)
+	public static final double angle(final Vertex o, final Vertex u, final Vertex v)
 	{
 		final double v1x = u.x - o.x;
 		final double v1y = u.y - o.y;
@@ -103,7 +103,7 @@ public class Vertex
 		return alpha;
 	}
 
-	public static double distance(Vertex u, Vertex v)
+	public static final double distance(final Vertex u, final Vertex v)
 	{
 		final double ux = u.x;
 		final double uy = u.y;

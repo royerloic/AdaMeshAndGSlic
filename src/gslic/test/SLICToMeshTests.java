@@ -66,10 +66,10 @@ public class SLICToMeshTests
 		Node lNode4 = lRootNode.addChild(0.5, 0.5, 0.4, 0.4);
 
 		LaplacianGeodesicSLIC lSLIC = new LaplacianGeodesicSLIC(lDoubleImage,
-																														64,
+																														128,
 																														0.01,
-																														7,
-																														2);
+																														3,
+																														1);
 		SLICVisualization lSLIClaplVisualization = new SLICVisualization(lSLIC);
 		// lSLICnewVisualization.setDisplayImage(false);
 		lSLIClaplVisualization.attachToNode(lNode1);

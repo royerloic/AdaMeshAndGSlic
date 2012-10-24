@@ -58,6 +58,7 @@ public class SLICVisualization
 												true,
 												true);
 		mImage.linear = false;
+		mImage.hflip = true;
 
 		final int lNumberOfCentroids = mSLIC.getNumberOfCentroids();
 		for (int i = 0; i < lNumberOfCentroids; i++)
