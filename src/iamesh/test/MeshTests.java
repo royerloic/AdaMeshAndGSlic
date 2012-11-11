@@ -28,7 +28,7 @@ public class MeshTests
 	Random rnd = new Random();
 
 	@Test
-	public void test1() throws LWJGLException, IOException, InstantiationException, IllegalAccessException
+	public void test() throws LWJGLException, IOException, InstantiationException, IllegalAccessException
 	{
 		final InputStream lInputStream = SLICToMeshTests.class.getResourceAsStream("/image/tail1.1024.png");
 		final DoubleArrayImage lDoubleImage = new DoubleArrayImage(lInputStream);
@@ -59,12 +59,12 @@ public class MeshTests
 		lMesh.addTriangle(a, b, c);
 		lMesh.addTriangle(a, d, c);
 		
-		for(int i=0; i<300; i++)
+		for(int i=0; i<10; i++)
 		{
 			lMesh.addVertexDelauney(rnd.nextDouble(), rnd.nextDouble());
 		}
 		
-		lMesh.delauneyRelax(2);
+		lMesh.delauneyRelax(100000);
 	
 
 		MeshVisualization lMeshVisualization = new MeshVisualization(lMesh,Color.red);

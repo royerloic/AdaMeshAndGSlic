@@ -49,25 +49,38 @@ public class Mesh
 
 	public void addVertexDelauney(double pX, double pY)
 	{
-		final Triangle lTriangle = findTriangle(pX, pY);
-		if (lTriangle != null)
+		final Triangle lTriangle = findTriangleStrictlyContaining(pX, pY);
+		if (lTriangle != null && !lTriangle.isVertex(pX, pY))
 		{
 			final Triangle[] lTriangleArray = breakupTriangle(lTriangle,
 																												pX,
 																												pY);
 
-		delauneyFlipEdgesOfTriangle(lTriangle);
+			//delauneyFlipEdgesOfTriangle(lTriangle);
 			delauneyFlipEdgesOfTriangle(lTriangleArray[0]);
 			delauneyFlipEdgesOfTriangle(lTriangleArray[1]);
 			delauneyFlipEdgesOfTriangle(lTriangleArray[2]);/**/
 		}
 		else
 		{
-			System.out.format("Cannot insert %(g,%g) \n", pX, pY);
+			System.out.format("Cannot insert (%g,%g) \n", pX, pY);
 		}
 	}
 
-	private Triangle findTriangle(double pX, double pY)
+	private Triangle findTriangleContaining(double pX, double pY)
+	{
+		for (Triangle Triangle : mTriangles)
+		{
+			final boolean isInside = Triangle.isInside(pX, pY);
+			if (isInside)
+			{
+				return Triangle;
+			}
+		}
+		return null;
+	}
+	
+	private Triangle findTriangleStrictlyContaining(double pX, double pY)
 	{
 		for (Triangle Triangle : mTriangles)
 		{

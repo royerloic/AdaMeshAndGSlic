@@ -81,12 +81,15 @@ public class Vertex
 		return "Vertex [x=" + x + ", y=" + y + ", i=" + i + "]";
 	}
 
-	public static final boolean areNeighbours(final Vertex pU, final Vertex pV)
+	public static final boolean areNeighbours(final Vertex pU,
+																						final Vertex pV)
 	{
 		return pU.isNeighbour(pV) && pV.isNeighbour(pU);
 	}
 
-	public static final double angle(final Vertex o, final Vertex u, final Vertex v)
+	public static final double angle(	final Vertex o,
+																		final Vertex u,
+																		final Vertex v)
 	{
 		final double v1x = u.x - o.x;
 		final double v1y = u.y - o.y;
@@ -110,6 +113,11 @@ public class Vertex
 		final double vx = v.x;
 		final double vy = v.y;
 		return Math.sqrt((ux - vx) * (ux - vx) + (uy - vy) * (uy - vy));
+	}
+
+	public final boolean is(final double pX, final double pY)
+	{
+		return x == pX && y == pY;
 	}
 
 }
