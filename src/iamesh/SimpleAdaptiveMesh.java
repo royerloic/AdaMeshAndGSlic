@@ -4,8 +4,6 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Random;
 
-import org.bridj.ann.Ptr;
-
 import mesh.Edge;
 import mesh.Mesh;
 import mesh.Triangle;
